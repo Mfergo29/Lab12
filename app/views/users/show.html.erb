@@ -1,0 +1,16 @@
+<h1><%= @user.name %>'s Profile</h1>
+<p><strong>Email:</strong> <%= @user.email %></p>
+
+<h2>Posts</h2>
+<ul>
+  <% @user.posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %></li>
+  <% end %>
+</ul>
+
+<h2>Comments</h2>
+<ul>
+  <% @user.comments.each do |comment| %>
+    <li><%= link_to comment.body, comment_path(comment) %></li>
+  <% end %>
+</ul>
